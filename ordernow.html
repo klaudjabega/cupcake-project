@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cupcakes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-side-navbar/1.0.0/bootstrap-side-navbar.min.css">
+    <link rel="stylesheet" href="styles/order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="https://media.tenor.com/D7oZNiMUz2QAAAAi/cupcake-gif.gif" alt="Cupcake Logo" class="logo">
+        <h1>Welcome to Charming Cupcake Bakery!!!</h1>
+        <p>To make your little moments as sweet as our cupcakes!</p>
+        <div class="navbar">
+            <form class="search-bar" action="#" method="GET">
+                <input type="text" class="search-input" placeholder="Search cupcakes..." name="search">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+            <nav>
+                <a href="/seasonal.html"><i>Seasonal Cupcakes</i></a>
+                <a href="/deliciousrecipes.html"><i>Delicious Recipes</i></a>
+                <a href="/ordernow.html"><i>Order Now</i></a>
+            </nav>
+        </div>
+    </header>
+
+    <button id="checkoutButton" style="display: none;">Proceed to Checkout</button>
+
+    <div id="orderForm">
+        <h2>Order Form</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" required><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required><br>
+
+            <label for="payment">Payment Method:</label>
+            <select id="payment" required>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="Credit Card">Credit Card</option>
+            </select><br>
+
+            <button type="button" id="submitOrder">Submit Order</button>
+        </form>
+    </div>
+
+    <h2>Available Cupcakes</h2>
+    <div id="cupcakesContainer">
+        <!-- Example cupcake items -->
+        <div class="cupcake-item">
+            <img src="https://via.placeholder.com/100" alt="Cupcake 1">
+            <p>Chocolate Cupcake</p>
+            <p>Price: $2.50</p>
+            <input type="number" id="quantity-1" value="1" min="1">
+            <button class="add-to-cart" data-id="1" data-name="Chocolate Cupcake" data-price="2.50">Add to Cart</button>
+        </div>
+        <div class="cupcake-item">
+            <img src="https://via.placeholder.com/100" alt="Cupcake 2">
+            <p>Vanilla Cupcake</p>
+            <p>Price: $2.00</p>
+            <input type="number" id="quantity-2" value="1" min="1">
+            <button class="add-to-cart" data-id="2" data-name="Vanilla Cupcake" data-price="2.00">Add to Cart</button>
+        </div>
+        <!-- Add more cupcake items here -->
+    </div>
+
+    <div id="cartContainer">
+        <h2>Your Cart</h2>
+        <ul id="cartList"></ul>
+        <p>Total: $<span id="totalPrice">0.00</span></p>
+    </div>
+
+    <div id="orderSummary"></div>
+
+    <script src="javascript/script.js"></script>
+
+</body>
+</html>
